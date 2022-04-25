@@ -11,6 +11,7 @@ EKS_116_VERSION := 1.16.15
 EKS_117_VERSION := 1.17.12
 EKS_118_VERSION := 1.18.9
 EKS_119_VERSION := 1.19.6
+EKS_122_VERSION := 1.22.6
 
 build:
 	packer build \
@@ -70,6 +71,9 @@ build-ubuntu2004-1.18:
 
 build-ubuntu2004-1.19:
 	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_119_VERSION) eks_build_date=2021-01-05
+
+build-ubuntu2004-1.22:
+	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_122_VERSION) eks_build_date=2022-03-09
 
 # RHEL 7
 #-----------------------------------------------------
